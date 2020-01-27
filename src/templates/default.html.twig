@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mon Site</title>
+    
+    {% block stylesheets %}
+    <style>
+        .wrapper {
+            display: flex;
+        }
+        main {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background: red;
+            min-height: 300px;
+        }
+        aside {
+            min-width: 100px;
+            background: green;
+            min-height: 300px;
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+    <nav>
+        <a href="home">Home</a>
+        <a href="about">About</a>
+    </nav>
+    <div class="wrapper">
+        <main>
+            {% block body %}
+            {% endblock %}
+        </main>
+        <aside>
+            {% block aside %}
+            <p>Mon aside par défaut</p>
+            {% endblock %}
+        </aside>
+    </div>
+    
+</body>
+</html>
